@@ -5,7 +5,7 @@ OBJECTS=$(C_SRC:.c=.o)
 
 CFLAGS=-g -Wall -fpic -O2
 CPPFLAGS=-g -Wall -fpic -I$(ERLANG_PATH) -O2
-LDFLAGS=-shared
+LDFLAGS=-bundle -flat_namespace -undefined suppress
 
 $(BIN_DIR)/rb_sets.so: $(OBJECTS)
 	mkdir -p $(BIN_DIR)
